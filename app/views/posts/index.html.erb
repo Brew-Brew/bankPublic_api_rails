@@ -1,0 +1,27 @@
+
+<h1>은행권공동 플랫폼 api를 가져와 계좌정보 출력하기</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>이름: <%=@results.user_name%></th>
+      <th>계좌갯수: <%=@results.res_cnt%></th>
+    </tr>
+    <tr>
+      <th>Bank</th>
+      <th>Banknum</th>
+      <th colspan="3"></th>
+   </tr>
+  </thead>
+
+  <tbody>
+    <% @results.res_list.each do |bank| %>
+      <tr>
+        <td><%= bank.bank_name %></td>
+        <td><%= bank.account_num_masked %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
